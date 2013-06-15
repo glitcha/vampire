@@ -22,17 +22,6 @@ Item {
          anchors { right: parent.right; rightMargin: 10; verticalCenter: parent.verticalCenter }
      }
 
-     Rectangle {
-         width: delegate.width; height: 1; color: "#cccccc"
-         anchors.bottom: delegate.bottom
-         visible: delegate.ListView.isCurrentItem ? false : true
-     }
-
-     Rectangle {
-         width: delegate.width; height: 1; color: "white"
-         visible: delegate.ListView.isCurrentItem ? false : true
-     }
-
      MouseArea {
          anchors.fill: delegate
          onClicked: {

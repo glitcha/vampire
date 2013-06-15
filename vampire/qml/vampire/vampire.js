@@ -11,6 +11,6 @@ function openBrowser(link) {
 }
 
 function closeBrowser() {
-    browser.visible = false;
     browser.url = 'about:blank';
+    browser.visible = false;
 }

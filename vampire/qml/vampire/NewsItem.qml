@@ -26,16 +26,18 @@ Item {
 
     ListView {
         id: list
-        width: window.width - 220; height: window.height
+        y:20
+        width: window.width - 220;
+        height: window.height - (parent.y + 30)
         model: feedModel
         delegate: NewsItemRowDelegate {}
-
+        clip: true;
     }
     ScrollBar {
         scrollArea: list;
         height: list.height;
         width: 5;
-        anchors.right: parent.right }
+        anchors.right: list.right - 20}
 
     function reload() {
         feedModel.reload();

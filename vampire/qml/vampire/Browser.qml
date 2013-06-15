@@ -21,10 +21,10 @@ Item {
 
      Button {
          id: close_button
-         y:0
-         x:parent.width - (close_button.width + 10)
-         height: 30
-         width: 50
+         y:5
+         x:parent.width - (close_button.width + 5)
+         height: 20
+         width: 30
          anchors.right: parent.anchors.right;
          anchors.left: parent.anchors.left;
          onClicked: { Vampire.closeBrowser(); }

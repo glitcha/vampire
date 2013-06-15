@@ -20,7 +20,17 @@ Item {
         x: 0
         y: 0
         width: window.width
-        height: window.height
+        height: window.height - 20
+        clip: true
+    }
+
+    Rectangle {
+        color: "#d8d8d8"
+        height: 20
+        width: parent.width
+        y: window.height - 20
+        x:0
+        anchors.bottom: parent.anchors.bottom
     }
 
     function loadCategory(selectedCategory) {
@@ -35,7 +45,7 @@ Item {
                                                               caption: category.feeds.get(i).name,
                                                               feedURL: category.feeds.get(i).feed,
                                                               x: i * 300,
-                                                              y: 20
+                                                              y: 5
                                                           });
         }
     }

@@ -4,21 +4,20 @@ Item {
 
     id: container
     width: 100
-    height: 30
+    height: 20
     property string caption: "Button"
     signal clicked
     Rectangle {
-        color: "white"
-        border.width: 1
-        border.color: "#cccccc"
-        radius: 5
+        color: "#666666"
+        radius: 3
         anchors.fill: parent
     }
 
     Text {
         text: caption
-        color: "black"
+        color: "white"
         font { family: "Ubuntu Medium"; pixelSize: 10; bold: false }
+        anchors.centerIn: parent
     }
 
     MouseArea {

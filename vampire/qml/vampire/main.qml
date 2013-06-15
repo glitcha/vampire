@@ -20,10 +20,12 @@ Rectangle {
                 anchors.fill: parent
                 model: rssFeeds
                 delegate: CategoryDelegate {}
-                highlight: Rectangle { color: systemPalette.highlight }
+                highlight: Rectangle { color: "#4d90fe" }
             }
             ScrollBar {
-                scrollArea: categories; height: categories.height; width: 8
+                scrollArea: categories;
+                height: categories.height;
+                width: 8
                 anchors.right: categories.right
             }
         }
