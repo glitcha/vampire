@@ -8,7 +8,7 @@ Item {
     property QtObject category: null
 
     Rectangle {
-        color: "#CCCCCC"
+        color: "#e5e5e5"
         height: window.height
         x: 0
         y: 0
@@ -18,7 +18,7 @@ Item {
     Column {
         id: feedSet
         x: 0
-        y: 30
+        y: 0
         width: window.width
         height: window.height
     }

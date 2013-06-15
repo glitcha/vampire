@@ -17,8 +17,11 @@ Item {
 
     Text {
         id: itemTitle
+        x:15
+        y:0
         text: ""
         font { family: "Ubuntu Medium"; pixelSize: 16; bold: false }
+        anchors.bottomMargin: 15
     }
 
     ListView {

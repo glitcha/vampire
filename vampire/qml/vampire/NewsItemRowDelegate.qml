@@ -13,7 +13,7 @@ Item {
         width: parent.width - 22
         height: parent.height - 20
         border.width: 1
-        border.color: "#aaaaaa"
+        border.color: "#d8d8d8"
         radius: 5
     }
 
@@ -24,7 +24,7 @@ Item {
 
         Text {
             id: titleText
-            text: '<html><style type="text/css"></style><a href="' + link + '">' + title + '</a></html>';
+            text: '<a style="color: #000000;" href="' + link + '">' + title + '</a>';
             width: parent.width;
             wrapMode: Text.WordWrap
             font { bold: false; family: "Roboto"; pointSize: 11 }
