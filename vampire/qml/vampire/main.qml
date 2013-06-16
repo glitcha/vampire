@@ -11,6 +11,8 @@ Rectangle {
 
     Row {
         Rectangle {
+
+            id: sidePanel
             width: 220; height: window.height
             color: "#cfcfcf"
 
@@ -27,6 +29,11 @@ Rectangle {
                 height: categories.height;
                 width: 8
                 anchors.right: categories.right
+            }
+            FormAddContent {
+                id: formAdd
+                anchors.bottom: sidePanel.anchors.bottom
+                y: sidePanel.height - formAdd.height
             }
         }
 

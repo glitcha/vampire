@@ -19,15 +19,21 @@ Item {
     }
 
     Column {
+
         id: column
-        x: 20; y: 20
+        x: 20; y: 5
         width: parent.width - 40
+
+        Image {
+            id: articleImage
+            source: media
+        }
 
         Text {
             id: titleText
             text: '<a style="color: #000000;" href="' + link + '">' + title + '</a>';
             width: parent.width
-            wrapMode: Text.WordWrap
+            wrapMode: Text.Wrap
             font { bold: false; family: "Roboto"; pointSize: 11 }
             onLinkActivated: Vampire.openBrowser(link)
         }
@@ -35,12 +41,13 @@ Item {
         Text {
             id: descriptionText
             width: parent.width
-            text: RegExp.toString(description)
+            text: Vampire.formatDescription(description)
             wrapMode: Text.WordWrap
             font { bold: false; family: "Roboto"; pointSize: 8 }
             clip: true
-            textFormat: Text.PlainText
+            textFormat: Text.RichText
             onLinkActivated: Vampire.openBrowser(link)
         }
+
     }
 }

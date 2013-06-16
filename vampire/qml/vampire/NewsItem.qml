@@ -10,9 +10,11 @@ Item {
         id: feedModel
         source: "http://" + feedURL
         query: "/rss/channel/item"
+        namespaceDeclarations: "declare namespace media = 'http://search.yahoo.com/mrss/';"
         XmlRole { name: "title"; query: "title/string()" }
         XmlRole { name: "link"; query: "link/string()" }
         XmlRole { name: "description"; query: "description/string()" }
+        XmlRole { name: "media"; query: "media:content/@url/string()" }
     }
 
     Text {
@@ -37,7 +39,8 @@ Item {
         scrollArea: list;
         height: list.height;
         width: 5;
-        anchors.right: list.right - 20}
+        anchors.right: list.right;
+    }
 
     function reload() {
         feedModel.reload();

@@ -2,7 +2,7 @@ import QtQuick 2.0
 
 ListModel {
     id: rssFeeds
-
+    /*
     ListElement {
         name: "Top Stories";
         feeds: [
@@ -17,5 +17,5 @@ ListModel {
             ListElement { name: "Xbox 360"; feed: "www.gamespot.com/rss/game_updates.php?platform=1029"; },
             ListElement { name: "Xbox 360"; feed: "www.gamespot.com/rss/game_updates.php?platform=1028&type=5" }
         ]
-    }
+    }*/
 }

@@ -30,7 +30,6 @@ Item {
         width: parent.width
         y: window.height - 20
         x:0
-        anchors.bottom: parent.anchors.bottom
     }
 
     function loadCategory(selectedCategory) {
