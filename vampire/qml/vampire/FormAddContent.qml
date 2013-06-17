@@ -1,4 +1,8 @@
 import QtQuick 2.0
+import QtQuick.LocalStorage 2.0
+import Ubuntu.Components 0.1
+
+import "vampire.js" as Vampire
 
 Item {
 
@@ -27,16 +31,13 @@ Item {
         MouseArea {
             anchors.fill: parent
             onClicked: {
-                if (!textInput.activeFocus) {
-                    textInput.forceActiveFocus();
-                    //textInput.openSoftwareInputPanel();
+                if (!addCatText.activeFocus) {
+                    addCatText.forceActiveFocus();
                 } else {
-                    textInput.focus = false;
+                    addCatText.focus = false;
                 }
             }
-            //onPressAndHold: textInput.closeSoftwareInputPanel();
         }
-
     }
 
     Rectangle {
@@ -57,7 +58,7 @@ Item {
         MouseArea {
             anchors.fill: parent
             onClicked: {
-
+                Vampire.addCategory(addCatText.text);
             }
         }
     }

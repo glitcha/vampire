@@ -1,4 +1,8 @@
 import QtQuick 2.0
+import QtQuick.LocalStorage 2.0 as Ls
+import Ubuntu.Components 0.1
+
+import "vampire.js" as Vampire
 
 Item {
     id: container

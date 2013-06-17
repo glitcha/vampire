@@ -7,6 +7,7 @@ Item {
     height: 20
     property string caption: "Button"
     signal clicked
+
     Rectangle {
         color: "#666666"
         radius: 3

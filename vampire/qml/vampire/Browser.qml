@@ -1,7 +1,6 @@
 import QtQuick 2.0
 import QtWebKit 3.0
-
-import "vampire.js" as Vampire
+import QtQuick.LocalStorage 2.0
 
 Item {
 
@@ -15,7 +14,6 @@ Item {
      Rectangle {
          height:30;
          width:parent.width
-         anchors.right: parent.anchors.right
          color: "black"
      }
 

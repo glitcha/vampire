@@ -1,13 +1,23 @@
 import QtQuick 2.0
+import QtQuick.LocalStorage 2.0
+import Ubuntu.Components 0.1
+
+import "vampire.js" as Vampire
 
 Rectangle {
+
     id: window
     width: 800; height: 480
-    SystemPalette { id: systemPalette; colorGroup: SystemPalette.Active }
-    property string currentFeed: "rss.news.yahoo.com/rss/topstories"
-    //property bool loading: feedModel.status === XmlListModel.Loading
 
+    SystemPalette { id: systemPalette; colorGroup: SystemPalette.Active }
     RssFeeds { id: rssFeeds }
+
+    Database {
+        id: db
+        onReady: Vampire.init();
+    }
+
+    property string currentFeed: "rss.news.yahoo.com/rss/topstories"
 
     Row {
         Rectangle {
@@ -32,7 +42,6 @@ Rectangle {
             }
             FormAddContent {
                 id: formAdd
-                anchors.bottom: sidePanel.anchors.bottom
                 y: sidePanel.height - formAdd.height
             }
         }
@@ -49,8 +58,7 @@ Rectangle {
             id: newsSpread
             width: window.width - 220; height: window.height
         }
-
     }
-    //ScrollBar { scrollArea: newsSpread; height: newsSpread.height; width: 8; anchors.right: window.right }
+
     Rectangle { x: 220; height: window.height; width: 1; color: "#ffffff" }
 }

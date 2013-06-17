@@ -1,3 +1,17 @@
+function init() {
+    loadCategories();
+}
+
+function loadCategories() {
+    rssFeeds.clear();
+    var categories = db.dbGetCategories().rows;
+    for(var i = 0; i < categories.length; i++) {
+        rssFeeds.append({
+                            'name' : categories[i].name,
+                            'feeds' : [],
+                        });
+    }
+}
 
 function categorySelected(categoryId) {
     newsSpread.loadCategory(rssFeeds.get(categoryId));
@@ -21,5 +35,7 @@ function formatDescription(description) {
 }
 
 function addCategory(category) {
-
+    db.dbAddCategory(category);
+    loadCategories();
 }
+
