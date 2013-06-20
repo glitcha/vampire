@@ -24,16 +24,19 @@ Item {
         x: 0
         y: 0
         width: window.width
-        height: window.height - 20
+        height: window.height - 30
         clip: true
     }
 
     Rectangle {
         color: "#d8d8d8"
-        height: 20
+        height: 30
         width: parent.width
-        y: window.height - 20
+        y: window.height - 30
         x:0
+        FormAddFeed {
+            id: formAddFeed
+        }
     }
 
     function loadCategory(selectedCategory) {
@@ -46,7 +49,7 @@ Item {
             var newsItemComponent = Qt.createComponent("NewsItem.qml");
             var newsItem = newsItemComponent.createObject(feedSet, {
                                                               caption: category.feeds.get(i).name,
-                                                              feedURL: category.feeds.get(i).feed,
+                                                              feedURL: category.feeds.get(i).url,
                                                               x: i * 300,
                                                               y: 5
                                                           });

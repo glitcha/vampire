@@ -8,11 +8,11 @@ import "vampire.js" as Vampire
 Item {
     id: container
     property alias caption: itemTitle.text
-    property string feedURL: "rss.news.yahoo.com/rss/topstories"
+    property string feedURL: ""
 
     XmlListModel {
         id: feedModel
-        source: "http://" + feedURL
+        source: feedURL
         query: "/rss/channel/item"
         namespaceDeclarations: "declare namespace media = 'http://search.yahoo.com/mrss/';"
         XmlRole { name: "title"; query: "title/string()" }

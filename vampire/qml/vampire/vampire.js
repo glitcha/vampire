@@ -1,22 +1,31 @@
 function init() {
+
     loadCategories();
 }
 
 function loadCategories() {
-    rssFeeds.clear();
+
     var categories = db.dbGetCategories().rows;
+    var feeds = [];
+
+    rssFeeds.clear();
+
     for(var i = 0; i < categories.length; i++) {
+
+        feeds = db.dbGetFeeds(categories[i].id);
         rssFeeds.append({
+                            'category_id' : categories[i].category_id,
                             'name' : categories[i].name,
-                            'feeds' : [],
+                            'feeds' : feeds,
                         });
     }
 }
 
-function categorySelected(categoryId) {
-    newsSpread.loadCategory(rssFeeds.get(categoryId));
+function categorySelected(categoryIndex) {
+    newsSpread.loadCategory(rssFeeds.get(categoryIndex));
     closeBrowser();
 }
+
 
 function openBrowser(link) {
     browser.url = link
@@ -39,3 +48,7 @@ function addCategory(category) {
     loadCategories();
 }
 
+function addFeed(url) {
+    db.dbAddFeed(1, url);
+    loadCategories();
+}
